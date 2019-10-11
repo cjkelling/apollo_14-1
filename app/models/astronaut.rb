@@ -6,4 +6,8 @@ class Astronaut < ApplicationRecord
   def self.average_age
     average(:age)
   end
+
+  def missions_by_name
+    missions.order(:title).pluck(:title).join(', ')
+  end
 end
